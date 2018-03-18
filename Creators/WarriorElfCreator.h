@@ -1,8 +1,10 @@
 #pragma once
 
-#include "ElfCreator.h"
+#include "HealerCreator.h"
+#include "../Units/WarriorElf.h"
 
-class WarriorElfCreator : public ElfCreator {
+class WarriorElfCreator : public UnitCreator<WarriorElf> {
 public:
-  std::unique_ptr<UnitInterface> create_unit() const override;
+  std::unique_ptr<WarriorElf> render_unit();
+  std::unique_ptr<WarriorElf> create_unit() const override;
 };

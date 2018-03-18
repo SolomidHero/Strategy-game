@@ -2,8 +2,8 @@
 
 #include <string>
 struct Health {
-  int max = 0;
   int current = 0;
+  int max = 0;
   int regen = 0;
   int armor = 0;
 };
@@ -24,7 +24,7 @@ class UnitInterface {
  public:
   // virtual std::string set_weapon(IWeapon* weapon) const = 0;
   virtual std::string quote() const = 0;
-  virtual Attack get_attack() const = 0;
-  virtual Health get_hp() const = 0;
+  virtual Attack& get_attack() = 0;
+  virtual Health& get_hp() = 0;
  private:
 };

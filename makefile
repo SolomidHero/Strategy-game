@@ -3,10 +3,11 @@ LDFLAGS=-g
 
 all: game
 
-game: main.o Elf.o WarriorElf.o UnitInterface.o Healer.o \
-ElfCreator.o WarriorElfCreator.o UnitCreator.o HealerCreator.o
-	g++ $(LDFLAGS) -o game main.o Elf.o WarriorElf.o UnitInterface.o Healer.o \
-ElfCreator.o WarriorElfCreator.o UnitCreator.o HealerCreator.o
+game: main.o Elf.o UnitInterface.o Healer.o WarriorElf.o \
+ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o
+	g++ $(LDFLAGS) -o game main.o Elf.o UnitInterface.o Healer.o WarriorElf.o \
+ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o
+	make clean
 
 main.o: main.cpp
 	g++ $(CPPFLAGS) -c main.cpp

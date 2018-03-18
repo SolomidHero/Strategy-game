@@ -9,8 +9,8 @@ class Elf : public UnitInterface {
     void set_hp(int, int, int);
     void set_attack(int, int, std::string);
     
-    Health get_hp() const;
-    Attack get_attack() const;
+    Health& get_hp();
+    Attack& get_attack();
   private:
     Health hp;
     Attack attack;

@@ -7,9 +7,9 @@ std::string Healer::quote() const {
   return "Power of restoration!";
 }
 
-void Healer::set_heal(int ports, int pts) {
-  heal.portions = ports;
+void Healer::set_heal(int pts, int ports) {
   heal.pt = pts;
+  heal.portions = ports;
 }
 
 Heal Healer::get_heal() const {
@@ -23,5 +23,7 @@ void Healer::heal_unit () {
     std::cout << "I was healed by " << delta << " hp!" << std::endl;
     heal.portions--;
     set_hp(hp.current + delta, hp.max, hp.regen);
+  } else {
+    std::cout << "I can't heal!" << std::endl;
   }
 }
