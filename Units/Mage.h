@@ -8,7 +8,7 @@ struct Magic {
   std::string type = "";
 };
 
-class Mage : public Elf {
+class Mage : virtual public Elf {
 public:
   std::string quote() const;
 

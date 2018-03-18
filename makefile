@@ -3,10 +3,10 @@ LDFLAGS=-g
 
 all: game
 
-game: main.o Elf.o UnitInterface.o Healer.o WarriorElf.o  Mage.o\
-ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o
-	g++ $(LDFLAGS) -o game main.o Elf.o UnitInterface.o Healer.o WarriorElf.o Mage.o \
-ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o
+game: main.o Elf.o UnitInterface.o Healer.o WarriorElf.o Mage.o Archmage.o \
+ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o ArchmageCreator.o
+	g++ $(LDFLAGS) -o game main.o Elf.o UnitInterface.o Healer.o WarriorElf.o Mage.o Archmage.o \
+ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o ArchmageCreator.o
 	make clean
 
 main.o: main.cpp
@@ -28,6 +28,8 @@ Healer.o: ./Units/Healer.cpp ./Units/Healer.h
 Mage.o: ./Units/Mage.cpp ./Units/Mage.h
 	g++ $(CPPFLAGS) -c ./Units/Mage.cpp
 
+Archmage.o: ./Units/Archmage.cpp ./Units/Archmage.h
+	g++ $(CPPFLAGS) -c ./Units/Archmage.cpp
 
 # Creators
 UnitCreator.o: ./Creators/UnitCreator.cpp ./Creators/UnitCreator.h ./Creators/UnitCreator.hpp
@@ -45,6 +47,8 @@ HealerCreator.o: ./Creators/HealerCreator.cpp ./Creators/HealerCreator.h
 MageCreator.o: ./Creators/MageCreator.cpp ./Creators/MageCreator.h
 	g++ $(CPPFLAGS) -c ./Creators/MageCreator.cpp
 
+ArchmageCreator.o: ./Creators/ArchmageCreator.cpp ./Creators/ArchmageCreator.h
+	g++ $(CPPFLAGS) -c ./Creators/ArchmageCreator.cpp
 
 clean:
 	$(RM) *.o *~

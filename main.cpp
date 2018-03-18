@@ -4,11 +4,13 @@
 #include "./Creators/WarriorElfCreator.h"
 #include "./Creators/HealerCreator.h"
 #include "./Creators/MageCreator.h"
+#include "./Creators/ArchmageCreator.h"
 
 #include "./Units/Elf.h"
 #include "./Units/WarriorElf.h"
 #include "./Units/Healer.h"
 #include "./Units/Mage.h"
+#include "./Units/Archmage.h"
 
 
 int main() {
@@ -31,6 +33,8 @@ int main() {
   MageCreator MageHill;
   std::unique_ptr<Mage> Adolf = MageHill.render_unit();
 
-
+  ArchmageCreator MagicTower;
+  std::unique_ptr<Archmage> Cadence = MagicTower.render_unit();
+  Cadence->get_magic();
   return 0;
 }

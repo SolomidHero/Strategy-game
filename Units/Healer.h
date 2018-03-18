@@ -7,7 +7,7 @@ struct Heal {
   int portions = 0;
 };
 
-class Healer : public Elf {
+class Healer : virtual public Elf {
 public:
   std::string quote() const;
   
