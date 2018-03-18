@@ -14,6 +14,11 @@ struct Attack {
   std::string type = "";
 };
 
+struct Modificator {
+  std::string type = "";
+  int value;
+};
+
 // struct Weapon {
 //   int damage = 0;
 //   std::string name = "";

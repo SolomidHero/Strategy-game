@@ -20,6 +20,23 @@ void Elf::set_attack(int l, int h, string t) {
   attack.type = t;
 }
 
+void Elf::set_modificator(std::string t, int v) {
+  for (int i = 0; i < mods.size(); i++) {
+    if (mods[i].type == t) {
+      mods[i].value = v;
+      return;
+    }
+  }
+  Modificator a;
+  a.type = t;
+  a.value = v;
+  mods.push_back(a);
+}
+
+std::vector<Modificator>& Elf::get_modificators() {
+  return mods;
+}
+
 Health& Elf::get_hp() {
   return hp;
 }
