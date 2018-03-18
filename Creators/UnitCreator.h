@@ -5,7 +5,7 @@
 
 template<class UnitClass>
 class UnitCreator {
- public:
+public:
   std::unique_ptr<UnitClass> render_unit();
   virtual std::unique_ptr<UnitClass> create_unit() const = 0;
 }; 

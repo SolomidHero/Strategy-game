@@ -1,5 +1,9 @@
 #include <iostream>
 #include <vector>
+
+#include "./FractionBuilders/director.h"
+#include "./FractionBuilders/HighElvesBuilder.h"
+
 #include "./Creators/ElfCreator.h"
 #include "./Creators/WarriorElfCreator.h"
 #include "./Creators/HealerCreator.h"
@@ -14,27 +18,27 @@
 
 
 int main() {
-  ElfCreator Elfguard;
-  std::unique_ptr<Elf> Brad = Elfguard.render_unit();
 
-  WarriorElfCreator Casarm;
-  std::unique_ptr<WarriorElf> John = Casarm.render_unit();
+  director app;
+  HighElvesBuilder Elfheim;
+  app.set_builder(&Elfheim);
+
+  std::unique_ptr<Elf> Brad = app.render_elf();
+
+  std::unique_ptr<WarriorElf> John = app.render_warrior();
   John->heal_unit();
   John->heal_unit();
   John->heal_unit();
   John->heal_unit();
 
-
-  HealerCreator KnowledgeTree;
-  std::unique_ptr<Healer> healer = KnowledgeTree.render_unit();
+  std::unique_ptr<Healer> healer = app.render_healer();
   healer->heal_unit();
   healer->heal_unit();
 
-  MageCreator MageHill;
-  std::unique_ptr<Mage> Adolf = MageHill.render_unit();
+  std::unique_ptr<Mage> Adolf = app.render_mage();
 
-  ArchmageCreator MagicTower;
-  std::unique_ptr<Archmage> Cadence = MagicTower.render_unit();
+  std::unique_ptr<Archmage> Cadence = app.render_archmage();
   Cadence->get_magic();
+
   return 0;
 }

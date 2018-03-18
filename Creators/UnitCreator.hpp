@@ -1,8 +1,9 @@
 #include <iostream>
+#include <typeinfo>
 
 template<class UnitClass>
 std::unique_ptr<UnitClass> UnitCreator<UnitClass>::render_unit() {
-  std::unique_ptr<UnitClass> hero = create_unit();
+  std::unique_ptr<UnitClass> hero = std::move(create_unit());
   std::cout << hero->quote() << std::endl;
   Health h = hero->get_hp();
   Attack a = hero->get_attack();

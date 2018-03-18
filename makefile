@@ -4,9 +4,11 @@ LDFLAGS=-g
 all: game
 
 game: main.o Elf.o UnitInterface.o Healer.o WarriorElf.o Mage.o Archmage.o \
-ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o ArchmageCreator.o
+ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o ArchmageCreator.o \
+director.o IBuilder.o HighElvesBuilder.o
 	g++ $(LDFLAGS) -o game main.o Elf.o UnitInterface.o Healer.o WarriorElf.o Mage.o Archmage.o \
-ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o ArchmageCreator.o
+ElfCreator.o UnitCreator.o HealerCreator.o WarriorElfCreator.o MageCreator.o ArchmageCreator.o \
+director.o IBuilder.o HighElvesBuilder.o
 	make clean
 
 main.o: main.cpp
@@ -50,5 +52,15 @@ MageCreator.o: ./Creators/MageCreator.cpp ./Creators/MageCreator.h
 ArchmageCreator.o: ./Creators/ArchmageCreator.cpp ./Creators/ArchmageCreator.h
 	g++ $(CPPFLAGS) -c ./Creators/ArchmageCreator.cpp
 
+
+# Fraction Builders
+director.o: ./FractionBuilders/director.cpp ./FractionBuilders/director.h
+	g++ $(CPPFLAGS) -c ./FractionBuilders/director.cpp
+
+IBuilder.o: ./FractionBuilders/IBuilder.cpp ./FractionBuilders/IBuilder.h
+	g++ $(CPPFLAGS) -c ./FractionBuilders/IBuilder.cpp
+
+HighElvesBuilder.o: ./FractionBuilders/HighElvesBuilder.cpp ./FractionBuilders/HighElvesBuilder.h
+	g++ $(CPPFLAGS) -c ./FractionBuilders/HighElvesBuilder.cpp
 clean:
 	$(RM) *.o *~
