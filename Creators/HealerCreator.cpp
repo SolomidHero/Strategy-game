@@ -4,7 +4,7 @@
 
 std::unique_ptr<Healer> HealerCreator::create_unit() const {
   std::unique_ptr<Healer> ptr (new Healer());
-  ptr->set_hp(103, 120, 6);
+  ptr->set_hp(120, 120, 6);
   ptr->set_attack(4, 6, "melee");
   ptr->set_heal(10, -1);
   return std::move(ptr);

@@ -19,15 +19,8 @@ struct Modificator {
   int value;
 };
 
-// struct Weapon {
-//   int damage = 0;
-//   std::string name = "";
-//   std::string type = "";
-// };
-
 class UnitInterface {
  public:
-  // virtual std::string set_weapon(IWeapon* weapon) const = 0;
   virtual std::string quote() const = 0;
   virtual Attack& get_attack() = 0;
   virtual Health& get_hp() = 0;

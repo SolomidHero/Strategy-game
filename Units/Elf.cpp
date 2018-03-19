@@ -38,6 +38,7 @@ std::vector<Modificator>& Elf::get_modificators() {
 }
 
 Health& Elf::get_hp() {
+  std::cout << "hp: " << hp.current << "/" << hp.max << " (" << hp.armor << ")" << std::endl;
   return hp;
 }
 

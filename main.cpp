@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <assert.h>
 
 #include "./FractionBuilders/director.h"
 #include "./FractionBuilders/HighElvesBuilder.h"
@@ -25,20 +26,23 @@ int main() {
 
   std::unique_ptr<Elf> Brad = app.render_elf();
 
-  std::unique_ptr<WarriorElf> John = app.render_warrior();
-  John->heal_unit();
-  John->heal_unit();
-  John->heal_unit();
-  John->heal_unit();
+  // std::unique_ptr<WarriorElf> John = app.render_warrior();
+  // John->heal_unit();
+  // John->heal_unit();
+  // John->heal_unit();
+  // John->heal_unit();
+
+  Brad->get_hp();
 
   std::unique_ptr<Healer> healer = app.render_healer();
-  healer->heal_unit();
-  healer->heal_unit();
+  healer->heal_unit(Brad);
+  Brad->get_hp();
 
-  std::unique_ptr<Mage> Adolf = app.render_mage();
+  // std::unique_ptr<Mage> Adolf = app.render_mage();
 
-  std::unique_ptr<Archmage> Cadence = app.render_archmage();
-  Cadence->get_magic();
-
+  // std::unique_ptr<Archmage> Cadence = app.render_archmage();
+  // Cadence->get_magic();
+  // Cadence->heal_unit(std::move(healer));
+  // Cadence->heal_unit(std::move(healer));
   return 0;
 }
