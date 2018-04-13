@@ -38,11 +38,11 @@ int main() {
   healer->heal_unit(Brad);
   Brad->get_hp();
 
-  // std::unique_ptr<Mage> Adolf = app.render_mage();
+  std::unique_ptr<Mage> Adolf = app.render_mage();
 
-  // std::unique_ptr<Archmage> Cadence = app.render_archmage();
-  // Cadence->get_magic();
-  // Cadence->heal_unit(std::move(healer));
-  // Cadence->heal_unit(std::move(healer));
+  std::unique_ptr<Archmage> Cadence = app.render_archmage();
+  Cadence->get_magic();
+  Cadence->heal_unit(healer);
+  Cadence->heal_unit(healer);
   return 0;
 }

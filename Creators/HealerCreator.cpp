@@ -1,12 +1,12 @@
 #include "HealerCreator.h"
 #include "../Units/Healer.h"
-#include <iostream>
+#include "CharactersConfig.h"
 
 std::unique_ptr<Healer> HealerCreator::create_unit() const {
   std::unique_ptr<Healer> ptr (new Healer());
-  ptr->set_hp(120, 120, 6);
-  ptr->set_attack(4, 6, "melee");
-  ptr->set_heal(10, -1);
+  ptr->set_hp(HealerHealth, HealerHealth, HealerRegen);
+  ptr->set_attack(HealerAttackLow, HealerAttackHigh, MeleeAttack);
+  ptr->set_heal(HealerHealValue, HealerHealCharges);
   return std::move(ptr);
 }
 

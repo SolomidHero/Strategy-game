@@ -1,11 +1,12 @@
 #include "../Units/WarriorElf.h"
 #include "WarriorElfCreator.h"
+#include "CharactersConfig.h"
 
 std::unique_ptr<WarriorElf> WarriorElfCreator::create_unit() const {
   std::unique_ptr<WarriorElf> ptr(new WarriorElf());
-  ptr->set_hp(160, 160, 6);
-  ptr->set_attack(6, 10, "melee");
-  ptr->set_heal(15, 3);
+  ptr->set_hp(WarriorHealth, WarriorHealth, WarriorRegen);
+  ptr->set_attack(WarriorAttackLow, WarriorAttackHigh, MeleeAttack);
+  ptr->set_heal(WarriorHealValue, WarriorHealCharges);
   return std::move(ptr);
 }
 
