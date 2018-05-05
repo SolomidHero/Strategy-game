@@ -1,5 +1,5 @@
 #include "HealerCreator.h"
-#include "../Units/Healer.h"
+#include "Healer.h"
 #include "CharactersConfig.h"
 
 std::unique_ptr<Healer> HealerCreator::create_unit() const {

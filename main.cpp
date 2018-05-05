@@ -2,20 +2,20 @@
 #include <vector>
 #include <assert.h>
 
-#include "./FractionBuilders/director.h"
-#include "./FractionBuilders/HighElvesBuilder.h"
+#include "director.h"
+#include "HighElvesBuilder.h"
 
-#include "./Creators/ElfCreator.h"
-#include "./Creators/WarriorElfCreator.h"
-#include "./Creators/HealerCreator.h"
-#include "./Creators/MageCreator.h"
-#include "./Creators/ArchmageCreator.h"
+#include "ElfCreator.h"
+#include "WarriorElfCreator.h"
+#include "HealerCreator.h"
+#include "MageCreator.h"
+#include "ArchmageCreator.h"
 
-#include "./Units/Elf.h"
-#include "./Units/WarriorElf.h"
-#include "./Units/Healer.h"
-#include "./Units/Mage.h"
-#include "./Units/Archmage.h"
+#include "Elf.h"
+#include "WarriorElf.h"
+#include "Healer.h"
+#include "Mage.h"
+#include "Archmage.h"
 
 
 int main() {
@@ -26,11 +26,11 @@ int main() {
 
   std::unique_ptr<Elf> Brad = app.render_elf();
 
-  // std::unique_ptr<WarriorElf> John = app.render_warrior();
-  // John->heal_unit();
-  // John->heal_unit();
-  // John->heal_unit();
-  // John->heal_unit();
+  std::unique_ptr<WarriorElf> John = app.render_warrior();
+  John->heal_unit();
+  John->heal_unit();
+  John->heal_unit();
+  John->heal_unit();
 
   Brad->get_hp();
 

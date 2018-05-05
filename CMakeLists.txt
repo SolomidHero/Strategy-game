@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(game)
-
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(Units Creators FractionBuilders)
+project(game)
+
+include_directories(Units/Headers Creators/Headers FractionBuilders/Headers)
+
 add_executable(game main.cpp)
 
 add_subdirectory(Units)
