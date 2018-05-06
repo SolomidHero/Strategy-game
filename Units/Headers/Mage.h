@@ -15,6 +15,12 @@ public:
   void set_magic(int, int, std::string);
 
   Magic& get_magic();
+
+  template<class UnitClass>
+  void attack_unit_by_magic(std::unique_ptr<UnitClass>& target);
+
 private:
   Magic magic;
 };
+
+#include "../Mage.hpp"

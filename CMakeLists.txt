@@ -4,11 +4,12 @@ set(CMAKE_CXX_STANDARD 14)
 
 project(game)
 
-include_directories(Units/Headers Creators/Headers FractionBuilders/Headers)
+include_directories(Units/Headers Creators/Headers FractionBuilders/Headers ArmyCoordinator/Headers)
 
 add_executable(game main.cpp)
 
 add_subdirectory(Units)
 add_subdirectory(Creators)
 add_subdirectory(FractionBuilders)
-target_link_libraries(game Units Creators FractionBuilders) 
+add_subdirectory(ArmyCoordinator)
+target_link_libraries(game Units Creators FractionBuilders ArmyCoordinator) 

@@ -1,6 +1,7 @@
 #include "Elf.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 std::string Elf::quote() const {

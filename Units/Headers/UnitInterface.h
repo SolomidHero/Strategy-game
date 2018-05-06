@@ -20,9 +20,10 @@ struct Modificator {
 };
 
 class UnitInterface {
- public:
+public:
   virtual std::string quote() const = 0;
   virtual Attack& get_attack() = 0;
   virtual Health& get_hp() = 0;
- private:
+
+private:
 };
