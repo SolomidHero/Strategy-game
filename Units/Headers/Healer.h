@@ -14,24 +14,25 @@ public:
   
   void set_heal(int pt, int portions);
 
-  Heal get_heal() const;
+  Heal& get_heal();
 
   void heal_unit();
-  template<class T>
-  void heal_unit(std::unique_ptr<T>& unit);
+  template<class UnitClass>
+  void heal_unit(std::unique_ptr<UnitClass>& unit);
 private:
   Heal heal;
 };
 
 
-template<class T>
-void Healer::heal_unit(std::unique_ptr<T>& unit) {
-  Health hp = unit->get_hp();
+template<class UnitClass>
+void Healer::heal_unit(std::unique_ptr<UnitClass>& unit) {
+  Heal& heal = get_heal();
+  Health& hp = unit->get_hp();
   if (heal.portions != 0) {
     int delta = (hp.current + heal.pt > hp.max)? hp.max - hp.current : heal.pt;
     std::cout << "I heal for " << delta << " hp!3" << std::endl;
     heal.portions--;
-    unit->set_hp(hp.current + delta, hp.max, hp.regen);
+    hp.current += delta;
   } else {
     std::cout << "I can't heal!" << std::endl;
   }

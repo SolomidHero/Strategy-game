@@ -27,11 +27,11 @@ int main() {
   HighElvesBuilder Elfheim;
   app.set_builder(&Elfheim);
 
-  std::unique_ptr<UnitInterface> Brad = app.create_elf();
-  std::unique_ptr<UnitInterface> Peter = app.create_elf();
-  std::unique_ptr<UnitInterface> Gven = app.create_elf();
-  std::unique_ptr<UnitInterface> Ody = app.create_elf();
-  std::unique_ptr<UnitInterface> Sam = app.create_mage();
+  std::unique_ptr<UnitInterface> Brad (app.create_elf());
+  std::unique_ptr<UnitInterface> Peter (app.create_elf());
+  std::unique_ptr<UnitInterface> Gven (app.create_healer());
+  std::unique_ptr<UnitInterface> Ody (app.create_elf());
+  std::unique_ptr<UnitInterface> Sam (app.create_mage());
   std::unique_ptr<UnitInterface> Kate (app.create_archmage());
 
   Army guard_bang;
@@ -44,8 +44,10 @@ int main() {
 
 
   std::unique_ptr<UnitInterface> Bill = app.render_elf();
+  guard_bang.attack(Bill);
   guard_bang.attack_by_magic(Bill);
   guard_bang.attack(Bill);
+  guard_bang.heal(Bill);
   Bill->get_hp();
 
   // std::unique_ptr<WarriorElf> John = app.render_warrior();

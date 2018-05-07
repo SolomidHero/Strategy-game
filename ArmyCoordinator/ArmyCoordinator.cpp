@@ -29,6 +29,15 @@ void Army::remove(std::unique_ptr<UnitInterface> unit) {
   }
 }
 
+void Army::heal(std::unique_ptr<UnitInterface>& target) {
+  for (auto it = army.begin(); it != army.end(); it++) {
+    if (auto pb = dynamic_unique_cast<Healer>(std::move(*it))) {
+      pb->heal_unit(target);
+      *it = dynamic_unique_cast<UnitInterface>(std::move(pb));
+    }
+  }
+}
+
 void Army::attack(std::unique_ptr<UnitInterface>& target) {
   for (auto it = army.begin(); it != army.end(); it++) {
     if (auto pb = dynamic_unique_cast<Elf>(std::move(*it))) {
