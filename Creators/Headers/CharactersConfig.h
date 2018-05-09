@@ -43,3 +43,6 @@ const int ArchmageHealValue = 12;
 const int ArchmageHealCharges = -1;
 const int ArchmageMagicDmgLow = 14;
 const int ArchmageMagicDmgHigh = 22;
+
+const int LogSize = 100;
+const int IdNum = 0;

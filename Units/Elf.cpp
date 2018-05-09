@@ -34,8 +34,8 @@ void Elf::set_modificator(std::string t, int v) {
   mods.push_back(a);
 }
 
-std::vector<Modificator>& Elf::get_modificators() {
-  return mods;
+void Elf::set_id(int id_num) {
+  id = id_num;
 }
 
 Health& Elf::get_hp() {
@@ -45,4 +45,12 @@ Health& Elf::get_hp() {
 
 Attack& Elf::get_attack() {
   return attack;
+}
+
+std::vector<Modificator>& Elf::get_modificators() {
+  return mods;
+}
+
+int Elf::get_id() {
+  return id;
 }

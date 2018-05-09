@@ -30,10 +30,8 @@ void Healer::heal_unit(std::unique_ptr<UnitClass>& unit) {
   Health& hp = unit->get_hp();
   if (heal.portions != 0) {
     int delta = (hp.current + heal.pt > hp.max)? hp.max - hp.current : heal.pt;
-    std::cout << "I heal for " << delta << " hp!3" << std::endl;
+    log.add("heal", get_id(), unit->get_id(), delta);
     heal.portions--;
     hp.current += delta;
-  } else {
-    std::cout << "I can't heal!" << std::endl;
   }
 }

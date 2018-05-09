@@ -7,6 +7,7 @@ std::unique_ptr<Healer> HealerCreator::create_unit() const {
   ptr->set_hp(HealerHealth, HealerHealth, HealerRegen);
   ptr->set_attack(HealerAttackLow, HealerAttackHigh, MeleeAttack);
   ptr->set_heal(HealerHealValue, HealerHealCharges);
+  ptr->set_id(IdNum);
   return std::move(ptr);
 }
 

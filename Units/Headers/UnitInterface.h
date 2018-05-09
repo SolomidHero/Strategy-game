@@ -1,6 +1,9 @@
 #pragma once
 
 #include <string>
+#include "CharactersConfig.h"
+#include "Log.h"
+
 struct Health {
   int current = 0;
   int max = 0;
@@ -24,6 +27,6 @@ public:
   virtual std::string quote() const = 0;
   virtual Attack& get_attack() = 0;
   virtual Health& get_hp() = 0;
-
+  virtual int get_id() = 0;
 private:
 };

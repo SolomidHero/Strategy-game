@@ -21,8 +21,8 @@
 
 
 int main() {
+  std::srand(std::time (nullptr));
 
-  std::srand(std::time (NULL));
   director app;
   HighElvesBuilder Elfheim;
   app.set_builder(&Elfheim);

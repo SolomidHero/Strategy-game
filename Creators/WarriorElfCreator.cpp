@@ -7,6 +7,7 @@ std::unique_ptr<WarriorElf> WarriorElfCreator::create_unit() const {
   ptr->set_hp(WarriorHealth, WarriorHealth, WarriorRegen);
   ptr->set_attack(WarriorAttackLow, WarriorAttackHigh, MeleeAttack);
   ptr->set_heal(WarriorHealValue, WarriorHealCharges);
+  ptr->set_id(IdNum);
   return std::move(ptr);
 }
 

@@ -7,6 +7,7 @@ std::unique_ptr<Archmage> ArchmageCreator::create_unit() const {
   ptr->set_attack(ArchmageAttackLow, ArchmageAttackHigh, MeleeAttack);
   ptr->set_heal(ArchmageHealValue, ArchmageHealCharges);
   ptr->set_magic(ArchmageMagicDmgLow, ArchmageMagicDmgHigh, "fire\tthunder\tice");
+  ptr->set_id(IdNum);
   return std::move(ptr);
 }
 
