@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include "NewIDGen.h"
 #include "UnitInterface.h"
 
 template<class UnitClass>

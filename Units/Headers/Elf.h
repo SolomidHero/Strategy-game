@@ -20,7 +20,6 @@ public:
 
   template<class UnitClass>
   void attack_unit(std::unique_ptr<UnitClass>& target);
-  Log log;
 
 private:
   Health hp;

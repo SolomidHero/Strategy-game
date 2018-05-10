@@ -9,4 +9,6 @@ void Elf::attack_unit(std::unique_ptr<UnitClass>& target) {
   if (target_hp.current <= 0) {
     target_hp.current = 0;
   }
+
+  Log::get_log_object().add("attack", get_id(), target->get_id(), attack_target_hp);
 }

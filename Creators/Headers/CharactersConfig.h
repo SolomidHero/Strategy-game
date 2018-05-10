@@ -45,4 +45,3 @@ const int ArchmageMagicDmgLow = 14;
 const int ArchmageMagicDmgHigh = 22;
 
 const int LogSize = 100;
-const int IdNum = 0;
