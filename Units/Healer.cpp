@@ -1,5 +1,4 @@
 #include "Healer.h"
-// #include <iostream>
 #include <string>
 using namespace std;
 
@@ -12,7 +11,7 @@ void Healer::set_heal(int pts, int ports) {
   heal.portions = ports;
 }
 
-Heal Healer::get_heal() const {
+Heal& Healer::get_heal() {
   return heal;
 }
 
