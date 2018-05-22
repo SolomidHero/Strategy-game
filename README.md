@@ -1,18 +1,18 @@
 # Strategy-game
 Programming Technologies course project
 
-## There is fractions with hierarchy:
-## Elf
+### There is fractions with hierarchy:
+### Elf
 	single unit
 
-## Healer
+### Healer
 	elf with heal
 
-## Warrior
+### Warrior
 	healer + more stats
 
-## Mage
+### Mage
 	elf with magic
 
-## Archmage
+### Archmage
 	healer + mage

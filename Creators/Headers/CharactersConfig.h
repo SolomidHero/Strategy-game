@@ -1,5 +1,12 @@
 #pragma once
 
+// Unit types id
+const int ElfID = 1;
+const int HealerID = 2;
+const int WarriorID = 3;
+const int MageID = 4;
+const int ArchmageID = 5;
+
 // Attack types
 const std::string RangeAttack = "range";
 const std::string MeleeAttack = "melee";
@@ -45,3 +52,7 @@ const int ArchmageMagicDmgLow = 14;
 const int ArchmageMagicDmgHigh = 22;
 
 const int LogSize = 100;
+const int DefaultGoldAmount = 2000;
+const int DefaultCapacity = 2000;
+
+const int EnemyMaxAmount = 100;
