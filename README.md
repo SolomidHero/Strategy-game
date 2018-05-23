@@ -17,14 +17,20 @@ Programming Technologies course project
 ### Archmage
 	healer + mage
 
-## Setup
+## Installation
 Download from repo
+```
 	git clone https://github.com/SolomidHero/Strategy-game
+```
 Make executable file
+```	
 	mkdir build
 	cd build
 	cmake ..
 	make
+```
 Run
+```
 	cd build
 	./game
+```
