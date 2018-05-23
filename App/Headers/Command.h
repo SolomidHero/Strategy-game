@@ -24,9 +24,6 @@ class SaveGameCommand : public Command {
 public:
   SaveGameCommand(Game* p) : Command(p) {}
   void execute() {
-    std::string file_name;
-    // std::cout << "Save name: ";
-    // std::cin >> file_name;
     game_ptr->save();
   }
 };
