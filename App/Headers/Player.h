@@ -15,7 +15,7 @@ class Player {
 public:
   Player();
 
-  void move(Point a);
+  void move(Point& a);
   void add_unit(std::unique_ptr<UnitInterface>& unit);
 private:
   int gold;

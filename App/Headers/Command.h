@@ -1,12 +1,13 @@
 #pragma once
 
-#include 
+#include "Game.h"
 
 class Command {   
 public:
   virtual ~Command() {}
   virtual void execute() = 0;
 protected:
+  friend class Game;
   Command(Game* p) : game_ptr(p) {}
   Game* game_ptr;       
 };
@@ -23,9 +24,10 @@ class SaveGameCommand : public Command {
 public:
   SaveGameCommand(Game* p) : Command(p) {}
   void execute() {
-    string file_name;
-    file_name = getPlayerInput("Enter file name:");
-    game_ptr->save( file_name);
+    std::string file_name;
+    // std::cout << "Save name: ";
+    // std::cin >> file_name;
+    game_ptr->save();
   }
 };
  
@@ -33,8 +35,9 @@ class MakeMoveCommand : public Command {
 public:
   MakeMoveCommand(Game* p) : Command(p) {}
   void execute() {
-    game_ptr->save("TEMP_FILE");
+    game_ptr->save();
     Point move;
+    std::cout << "Coords: ";
     std::cin >> move.x >> move.y;
     game_ptr->make_move(move);
   }

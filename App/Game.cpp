@@ -90,6 +90,10 @@ void Game::save() {
   saver->add_save(save);
 }
 
+void Game::make_move(Point& move) {
+  players[0]->move(move);
+}
+
 void Game::undo() {
   if (!saver->saved_games.empty()) {
     State s = std::move(saver->saved_games[saver->saved_games.size() - 1]);

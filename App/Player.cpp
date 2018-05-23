@@ -7,7 +7,7 @@ double dist(Point& a, Point& b) {
 
 Player::Player() : gold(DefaultGoldAmount), capacity(DefaultCapacity) {}
 
-void Player::move(Point a) {
+void Player::move(Point& a) {
   spot = a;
 }
 

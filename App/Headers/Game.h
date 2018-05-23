@@ -27,7 +27,7 @@ class Game {
 public:
   void create();
   void save();
-  void make_move(std::string move);
+  void make_move(Point& move);
   void battle(Player& hero1, Player& hero2);
   void undo(); 
 
